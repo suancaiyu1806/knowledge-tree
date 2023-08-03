@@ -16,7 +16,7 @@ type C = Awaited<boolean | Promise<number>>;
 type C = number | boolean;
 ```
 
-#### 2. Partial<Type>
+#### 2. Partial\<Type\>
 
 构造一个类型，将源类型的所有属性都设置为可选。
 
@@ -40,7 +40,7 @@ const todo2 = updateTodo(todo1, {
 });
 ```
 
-#### 3. Required<Type>
+#### 3. Require\<Type\>
 
 与 Partial 相反，将源类型的所有属性都设置为必须。
 
@@ -56,7 +56,7 @@ const obj2: Required<Props> = { a: 5 };
 // Error: Property 'b' is missing in type '{ a: number; }' but required in type 'Required<Props>'.
 ```
 
-#### 4. Readonly<Type>
+#### 4. Readonly\<Type\>
 
 将源类型的属性设置为只读属性，不可更改。
 
@@ -73,7 +73,7 @@ todo.title = "Hello";
 // Error: Cannot assign to 'title' because it is a read-only property.
 ```
 
-#### 5. Pick<Type, Keys>
+#### 5. Pick\<Type, Keys\>
 
 从源类型中选取部分属性。
 
@@ -92,7 +92,7 @@ const todo: TodoPreview = {
 };
 ```
 
-#### 6. Omit<Type, Keys>
+#### 6. Omit\<Type, Keys\>
 
 与 Pick 相反，从源类型中移除部分属性。
 
@@ -120,7 +120,7 @@ const todoInfo: TodoInfo = {
 };
 ```
 
-#### 7. Exclude<UnionType, ExcludedMembers>
+#### 7. Exclude\<UnionType, ExcludedMembers\>
 
 类似 Omit，从源类型中排除部分属性，区别是 Exclude 的排除支持“模糊匹配”。
 
@@ -149,7 +149,7 @@ type T3 =
   | { kind: "triangle"; x: number; y: number };
 ```
 
-#### 8. Extract<Type, Union>
+#### 8. Extract\<Type, Union\>
 
 与 Exclude 相反，找出源类型中符合条件的类型，支持“模糊匹配”。
 
@@ -175,7 +175,7 @@ type T2 = {
 };
 ```
 
-#### 9. NonNullable<Type>
+#### 9. NonNullable\<Type\>
 
 移除源类型中的空项(含 null 与 undefined)。
 
@@ -189,7 +189,7 @@ type T1 = NonNullable<string[] | null | undefined>;
 type T1 = string[];
 ```
 
-#### 10. Parameters<Type>
+#### 10. Parameters\<Type\>
 
 获取函数参数参数数组类型，传入非函数会报错。
 
@@ -266,7 +266,7 @@ type T5 = ConstructorParameters<Function>;
 type T5 = never;
 ```
 
-#### 12. ReturnType<Type>
+#### 12. ReturnType\<Type\>
 
 获取函数的返回类型。
 
@@ -316,7 +316,7 @@ type T8 = ReturnType<Function>;
 type T8 = any;
 ```
 
-#### 13. InstanceType<Type>
+#### 13. InstanceType\<Type\>
 
 获取对象实例对应类。
 
@@ -349,7 +349,7 @@ type T4 = InstanceType<Function>;
 type T4 = any;
 ```
 
-#### 14. ThisParameterType<Type>
+#### 14. ThisParameterType\<Type\>
 
 获取函数 this 参数的类型，无 this 参数则为 unknown。注意 ThisParameterType 的参数为类型，因此需要取函数的 type。
 
@@ -365,7 +365,7 @@ function numberToString(n: ThisParameterType<typeof toHex>) {
 }
 ```
 
-#### 15. OmitThisParameter<Type>
+#### 15. OmitThisParameter\<Type\>
 
 移除函数的 this 参数的类型。
 
@@ -381,7 +381,7 @@ const fiveToHex: OmitThisParameter<typeof toHex> = toHex.bind(5);
 console.log(fiveToHex());
 ```
 
-#### 16. ThisType<Type>
+#### 16. ThisType\<Type\>
 
 定义方法中 this 的类型。
 
